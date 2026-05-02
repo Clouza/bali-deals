@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bali Deals — Jatiluwih Resto · Eco Farm · Royal Orchid Spa · Bali Orchid Spa</title>
+  <meta name="description" content="Discover authentic Balinese dining and rejuvenating spa experiences at Jatiluwih Resto, Jatiluwih Eco Farm, Royal Orchid Spa, and Bali Orchid Spa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* ── reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:   #faf6f0;
+      --sand:    #e8dcc8;
+      --earth:   #8b6914;
+      --earth-dk:#5a4309;
+      --green:   #3a6b3e;
+      --green-lt:#5a8f5e;
+      --brown:   #6b4226;
+      --gold:    #c9a227;
+      --gold-lt: #f0d060;
+      --text:    #2c2416;
+      --muted:   #7a6b55;
+      --white:   #ffffff;
+      --wa:      #25d366;
+      --wa-dk:   #128c4b;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── utility ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section-label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .divider {
+      width: 60px; height: 3px;
+      background: var(--gold);
+      margin: 16px 0 24px;
+      border-radius: 2px;
+    }
+    .divider.center { margin: 16px auto 28px; }
+    .tag {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--sand);
+      color: var(--earth-dk);
+    }
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--earth);
+    }
+    .badge-new {
+      font-size: .6rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--gold); color: var(--earth-dk);
+      padding: 2px 8px; border-radius: 20px; margin-left: 6px;
+    }
+
+    /* ── text-as-image placeholder ── */
+    .img-placeholder {
+      width: 100%; border-radius: 12px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 20px;
+      min-height: 200px;
+      position: relative; overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+    .img-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: inherit;
+      opacity: .15;
+    }
+    .img-placeholder .ph-icon { font-size: 2.5rem; margin-bottom: 10px; position: relative; z-index: 1; }
+    .img-placeholder .ph-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      position: relative; z-index: 1;
+      margin-bottom: 4px;
+    }
+    .img-placeholder .ph-sub {
+      font-size: .72rem; opacity: .75;
+      position: relative; z-index: 1;
+    }
+    .ph-resto    { background: linear-gradient(135deg,#d4a96a,#8b5e3c); color:#fff; }
+    .ph-eco      { background: linear-gradient(135deg,#4a7c59,#2d5a3d); color:#fff; }
+    .ph-royal    { background: linear-gradient(135deg,#8b4f9e,#5a2d7a); color:#fff; }
+    .ph-bali-spa { background: linear-gradient(135deg,#c97b4b,#a0522d); color:#fff; }
+    .ph-food     { background: linear-gradient(135deg,#e8a44a,#c8782a); color:#fff; }
+    .ph-drink    { background: linear-gradient(135deg,#5b9bd5,#2e6ba8); color:#fff; }
+    .ph-treat    { background: linear-gradient(135deg,#c06ba0,#8b3a70); color:#fff; }
+    .ph-nature   { background: linear-gradient(135deg,#6aab5e,#3d7a35); color:#fff; }
+
+    /* ── sticky nav ── */
+    #main-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--sand);
+      padding: 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--earth-dk);
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; gap: 4px;
+      list-style: none;
+      overflow-x: auto;
+    }
+    .nav-links li a {
+      display: block;
+      padding: 6px 12px;
+      font-size: .78rem; font-weight: 500;
+      border-radius: 20px;
+      white-space: nowrap;
+      transition: background .2s, color .2s;
+      color: var(--muted);
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active { background: var(--earth); color: #fff; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: .3s;
+    }
+    .hamburger span + span { margin-top: 5px; }
+
+    /* ── hero ── */
+    #hero {
+      background: linear-gradient(160deg, #1a3a1e 0%, #2c5a30 35%, #6b8c3a 65%, #a07830 100%);
+      color: #fff;
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 6px 16px; border-radius: 20px;
+      background: rgba(201,162,39,.25);
+      border: 1px solid rgba(201,162,39,.5);
+      color: var(--gold-lt);
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+      margin-bottom: 16px;
+      max-width: 800px; margin-inline: auto;
+    }
+    #hero p {
+      font-size: clamp(.9rem, 2vw, 1.1rem);
+      opacity: .85;
+      max-width: 600px; margin: 0 auto 36px;
+    }
+    .hero-brands {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .hero-brand {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 10px 18px; border-radius: 30px;
+      font-size: .82rem; font-weight: 500;
+      backdrop-filter: blur(4px);
+      transition: background .2s;
+    }
+    .hero-brand:hover { background: rgba(255,255,255,.22); }
+    .hero-brand .icon { font-size: 1.1rem; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--wa); color: #fff;
+      padding: 14px 32px; border-radius: 30px;
+      font-size: .9rem; font-weight: 600;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: background .2s, transform .2s;
+    }
+    .hero-cta:hover { background: var(--wa-dk); transform: translateY(-2px); }
+
+    /* ── section wrapper ── */
+    .brand-section { padding: 80px 0; }
+    .brand-section:nth-child(even) { background: #fff; }
+    .brand-header { text-align: center; margin-bottom: 48px; }
+    .brand-header h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    .brand-header p { color: var(--muted); max-width: 580px; margin: 0 auto; font-size: .95rem; }
+
+    /* ── menu grid ── */
+    .menu-tabs {
+      display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 8px 20px; border-radius: 20px;
+      font-size: .8rem; font-weight: 600;
+      border: 2px solid var(--sand);
+      background: transparent; cursor: pointer;
+      transition: all .2s; color: var(--muted);
+    }
+    .tab-btn.active { background: var(--earth); border-color: var(--earth); color: #fff; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .menu-card {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+      cursor: pointer;
+      position: relative;
+    }
+    .menu-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .menu-card.selected { border-color: var(--earth); box-shadow: 0 0 0 3px rgba(139,105,20,.2); }
+    .menu-card.selected::after {
+      content: '✓';
+      position: absolute; top: 10px; right: 10px;
+      width: 28px; height: 28px;
+      background: var(--earth); color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700;
+    }
+    .menu-card-img { height: 150px; overflow: hidden; }
+    .menu-card-img .img-placeholder { height: 100%; min-height: unset; border-radius: 0; }
+    .menu-card-body {
+      padding: 14px 16px 16px;
+      border-top: 1px solid var(--sand);
+    }
+    .menu-card-body h4 { font-size: .95rem; margin-bottom: 6px; }
+    .menu-card-body p {
+      font-size: .78rem; color: var(--muted);
+      margin-bottom: 12px; line-height: 1.6;
+      display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .menu-card-footer { display: flex; align-items: center; justify-content: space-between; }
+
+    /* ── spa treatment cards ── */
+    .treat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .treat-card {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+      cursor: pointer;
+      position: relative;
+    }
+    .treat-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .treat-card.selected { border-color: #8b4f9e; box-shadow: 0 0 0 3px rgba(139,79,158,.2); }
+    .treat-card.selected::after {
+      content: '✓';
+      position: absolute; top: 10px; right: 10px;
+      width: 28px; height: 28px;
+      background: #8b4f9e; color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700;
+    }
+    .treat-card-img { height: 150px; overflow: hidden; }
+    .treat-card-img .img-placeholder { height: 100%; min-height: unset; border-radius: 0; }
+    .treat-card-body {
+      padding: 14px 16px 12px;
+      border-top: 1px solid var(--sand);
+    }
+    .treat-card-body h4 { font-size: .95rem; margin-bottom: 6px; }
+    .treat-card-body p {
+      font-size: .78rem; color: var(--muted);
+      margin-bottom: 12px; line-height: 1.6;
+      display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .treat-duration {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: .72rem; color: var(--muted);
+      background: var(--cream); padding: 3px 10px; border-radius: 20px;
+    }
+    .treat-card-footer { display: flex; align-items: center; justify-content: space-between; padding: 0 16px 16px; }
+
+    /* ── order form ── */
+    .order-form-wrap {
+      background: linear-gradient(135deg, #fdf8f0, #f5eedd);
+      border: 1px solid var(--sand);
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .order-form-wrap h3 {
+      font-size: 1.4rem; margin-bottom: 6px;
+    }
+    .order-form-wrap > p { font-size: .85rem; color: var(--muted); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: .78rem; font-weight: 600; color: var(--earth-dk); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px 14px;
+      border: 1.5px solid var(--sand);
+      border-radius: 10px;
+      font-size: .875rem;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--earth);
+      box-shadow: 0 0 0 3px rgba(139,105,20,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .selected-items-preview {
+      background: #fff;
+      border: 1.5px dashed var(--sand);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: .8rem;
+      color: var(--muted);
+      min-height: 48px;
+      margin-bottom: 16px;
+    }
+    .selected-items-preview span { color: var(--earth); font-weight: 600; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--wa); color: #fff;
+      padding: 14px 28px; border-radius: 30px;
+      font-size: .9rem; font-weight: 700;
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(37,211,102,.35);
+      transition: background .2s, transform .2s;
+      width: 100%; justify-content: center;
+    }
+    .btn-wa:hover { background: var(--wa-dk); transform: translateY(-2px); }
+    .btn-wa svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+    /* spa form accent */
+    .spa-form .order-form-wrap {
+      background: linear-gradient(135deg, #fdf5ff, #f5e8ff);
+      border-color: #e0c4f0;
+    }
+    .spa-form .form-group input:focus,
+    .spa-form .form-group select:focus,
+    .spa-form .form-group textarea:focus {
+      border-color: #8b4f9e;
+      box-shadow: 0 0 0 3px rgba(139,79,158,.1);
+    }
+    .spa-form .form-group label { color: #6a2d8f; }
+
+    /* ── info strip ── */
+    .info-strip {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      margin-bottom: 36px;
+    }
+    .info-item {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff;
+      border: 1px solid var(--sand);
+      padding: 10px 16px; border-radius: 12px;
+      font-size: .8rem;
+    }
+    .info-item .ii-icon { font-size: 1.2rem; }
+    .info-item strong { display: block; font-weight: 600; font-size: .82rem; }
+    .info-item span { color: var(--muted); }
+
+    /* ── floating WA button ── */
+    #float-wa {
+      position: fixed; bottom: 28px; right: 24px; z-index: 200;
+      background: var(--wa); color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.5);
+      transition: transform .2s;
+    }
+    #float-wa:hover { transform: scale(1.1); }
+    #float-wa svg { width: 28px; height: 28px; fill: currentColor; }
+
+    /* ── footer ── */
+    footer {
+      background: var(--earth-dk);
+      color: rgba(255,255,255,.8);
+      padding: 48px 20px 28px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand h3 { color: #fff; margin-bottom: 10px; }
+    .footer-brand p { font-size: .82rem; line-height: 1.7; }
+    .footer-col h4 { color: var(--gold-lt); font-size: .85rem; margin-bottom: 12px; font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: .8rem; opacity: .75; transition: opacity .2s; }
+    .footer-col ul li a:hover { opacity: 1; }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 28px;
+      margin-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      font-size: .75rem;
+      opacity: .55;
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 60px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--sand); flex-direction: column; padding: 12px 16px; gap: 4px; }
+      .nav-links.open { display: flex; }
+      .nav-links li a { border-radius: 8px; }
+      .hamburger { display: flex; flex-direction: column; }
+      #main-nav { position: relative; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .brand-section { padding: 56px 0; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-brand { font-size: .75rem; padding: 8px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ STICKY NAV ══ -->
+<nav id="main-nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">Bali<span>Deals</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#jatiluwih-resto">🍽 Jatiluwih Resto</a></li>
+      <li><a href="#eco-farm">🌿 Eco Farm</a></li>
+      <li><a href="#royal-orchid-spa">💜 Royal Orchid Spa</a></li>
+      <li><a href="#bali-orchid-spa">🌸 Bali Orchid Spa</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-badge">🌴 Bali's Finest Experiences</div>
+    <h1>Taste, Explore &amp; Rejuvenate in the Heart of Bali</h1>
+    <p>From the iconic rice terraces of Jatiluwih to the most luxurious spa retreats in Nusa Dua and Kuta — discover unforgettable moments.</p>
+    <div class="hero-brands">
+      <a href="#jatiluwih-resto" class="hero-brand"><span class="icon">🍽</span> Jatiluwih Resto</a>
+      <a href="#eco-farm" class="hero-brand"><span class="icon">🌿</span> Jatiluwih Eco Farm</a>
+      <a href="#royal-orchid-spa" class="hero-brand"><span class="icon">💜</span> Royal Orchid Spa</a>
+      <a href="#bali-orchid-spa" class="hero-brand"><span class="icon">🌸</span> Bali Orchid Spa</a>
+    </div>
+    <a href="#jatiluwih-resto" class="hero-cta">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order &amp; Book via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — JATILUWIH RESTO
+════════════════════════════════════════ -->
+<section class="brand-section" id="jatiluwih-resto">
+  <div class="container">
+    <div class="brand-header" data-aos="fade-up">
+      <div class="section-label" style="background:#fdf0d8;color:#8b5e1a;">🍽 Restaurant</div>
+      <h2>Jatiluwih Resto</h2>
+      <div class="divider center"></div>
+      <p>Where rice fields meet good eats. Authentic Balinese flavors and international delights surrounded by UNESCO World Heritage rice terraces. Open daily 09:00 – 19:00.</p>
+    </div>
+
+    <div class="info-strip" data-aos="fade-up" data-aos-delay="100">
+      <div class="info-item"><span class="ii-icon">📍</span><div><strong>Location</strong><span>Jatiluwih, Tabanan, Bali</span></div></div>
+      <div class="info-item"><span class="ii-icon">🕘</span><div><strong>Open Hours</strong><span>09:00 – 19:00 Daily</span></div></div>
+      <div class="info-item"><span class="ii-icon">⭐</span><div><strong>Rating</strong><span>4.5 / 5 on TripAdvisor</span></div></div>
+      <div class="info-item"><span class="ii-icon">🏆</span><div><strong>Rank</strong><span>#1 Restaurant in Jatiluwih</span></div></div>
+    </div>
+
+    <!-- MENU TABS -->
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="switchTab('resto','food',this)">🍛 Food</button>
+      <button class="tab-btn" onclick="switchTab('resto','drinks',this)">🥤 Drinks</button>
+    </div>
+
+    <!-- FOOD TAB -->
+    <div class="tab-panel active" id="resto-food">
+      <div class="menu-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Nasi Campur Bali','IDR 65.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍱</div>
+              <div class="ph-title">Nasi Campur Bali</div>
+              <div class="ph-sub">Steamed rice · assorted side dishes</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Nasi Campur Bali</h4>
+            <p>Steamed rice served with chicken satay, lawar, jukut urab, plecing kangkung, and sambal matah.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 65.000</span>
+              <span class="tag">Balinese</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Bebek Betutu','IDR 120.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🦆</div>
+              <div class="ph-title">Bebek Betutu</div>
+              <div class="ph-sub">Slow-cooked spiced duck</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Bebek Betutu</h4>
+            <p>Traditional slow-cooked duck infused with Balinese base genep spice blend, wrapped in banana leaf.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 120.000</span>
+              <span class="tag">Signature</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Sate Lilit Bali','IDR 55.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍢</div>
+              <div class="ph-title">Sate Lilit Bali</div>
+              <div class="ph-sub">Minced fish or pork satay</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Sate Lilit Bali</h4>
+            <p>Minced fish or pork seasoned with coconut, lemongrass, and galangal, grilled on lemongrass skewers.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 55.000</span>
+              <span class="tag">Balinese</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Ayam Goreng Bumbu Rujak','IDR 75.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍗</div>
+              <div class="ph-title">Ayam Goreng Bumbu Rujak</div>
+              <div class="ph-sub">Fried chicken · spiced marinade</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Ayam Goreng Bumbu Rujak</h4>
+            <p>Crispy fried chicken marinated in a rich Indonesian rujak spice blend, served with steamed rice.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 75.000</span>
+              <span class="tag">Indonesian</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Grilled Fish Jimbaran Style','IDR 95.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🐟</div>
+              <div class="ph-title">Grilled Fish Jimbaran Style</div>
+              <div class="ph-sub">Fresh catch · sambal matah</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Grilled Fish Jimbaran Style</h4>
+            <p>Whole fresh fish grilled over coconut shell charcoal, glazed with Jimbaran sauce and sambal matah.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 95.000</span>
+              <span class="tag">Seafood</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Nasi Goreng Special','IDR 60.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍳</div>
+              <div class="ph-title">Nasi Goreng Special</div>
+              <div class="ph-sub">Balinese fried rice</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Nasi Goreng Special</h4>
+            <p>Balinese-style fried rice with shrimp, chicken, egg, served with prawn crackers and pickles.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 60.000</span>
+              <span class="tag">Indonesian</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Pasta Aglio Olio','IDR 85.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍝</div>
+              <div class="ph-title">Pasta Aglio Olio</div>
+              <div class="ph-sub">Western · garlic · olive oil</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Pasta Aglio Olio</h4>
+            <p>Al dente spaghetti tossed in garlic-infused olive oil, chili flakes, parsley, and parmesan.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 85.000</span>
+              <span class="tag">Western</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Buffet Package (min. 10 pax)','IDR 150.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍽</div>
+              <div class="ph-title">Buffet Package</div>
+              <div class="ph-sub">min. 10 pax · all-you-can-eat</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Buffet Package <span class="badge-new">Group</span></h4>
+            <p>All-you-can-eat Balinese and Indonesian spread. Ideal for tours, family gatherings, and corporate events.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 150.000/pax</span>
+              <span class="tag">Group</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /menu-grid food -->
+    </div><!-- /tab-panel food -->
+
+    <!-- DRINKS TAB -->
+    <div class="tab-panel" id="resto-drinks">
+      <div class="menu-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Fresh Coconut (Green)','IDR 35.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🥥</div>
+              <div class="ph-title">Fresh Young Coconut</div>
+              <div class="ph-sub">Chilled · straight from the shell</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Fresh Young Coconut</h4>
+            <p>Chilled green coconut served straight from the shell with natural coconut flesh.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 35.000</span>
+              <span class="tag">Fresh</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Jamu Kunyit Asam','IDR 28.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🌿</div>
+              <div class="ph-title">Jamu Kunyit Asam</div>
+              <div class="ph-sub">Traditional turmeric herbal drink</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Jamu Kunyit Asam</h4>
+            <p>Traditional Balinese herbal drink made with turmeric, tamarind, ginger and palm sugar. Refreshing and healthy.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 28.000</span>
+              <span class="tag">Traditional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Fresh Fruit Juice','IDR 32.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🍹</div>
+              <div class="ph-title">Fresh Fruit Juice</div>
+              <div class="ph-sub">Watermelon · Mango · Pineapple · Papaya</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Fresh Fruit Juice</h4>
+            <p>Freshly pressed tropical fruits — choose from watermelon, mango, pineapple, papaya, or mixed.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 32.000</span>
+              <span class="tag">Juice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Bali Coffee (Kopi Bali)','IDR 25.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">☕</div>
+              <div class="ph-title">Kopi Bali</div>
+              <div class="ph-sub">Traditional Balinese coffee</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Kopi Bali</h4>
+            <p>Authentic Balinese arabica coffee brewed the traditional way. Rich, earthy, and aromatic.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 25.000</span>
+              <span class="tag">Coffee</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Es Dawet Bali','IDR 30.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🧋</div>
+              <div class="ph-title">Es Dawet Bali</div>
+              <div class="ph-sub">Balinese chilled sweet dessert drink</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Es Dawet Bali</h4>
+            <p>Chilled Balinese dessert drink with pandan jelly, coconut milk, palm sugar, and crushed ice.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 30.000</span>
+              <span class="tag">Dessert Drink</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'resto','Bali Iced Tea','IDR 22.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🍵</div>
+              <div class="ph-title">Bali Iced Tea</div>
+              <div class="ph-sub">Lemongrass · ginger · pandan</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Bali Iced Tea</h4>
+            <p>Refreshing iced tea infused with lemongrass, ginger, and pandan leaf. Served with a squeeze of lime.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 22.000</span>
+              <span class="tag">Tea</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /menu-grid drinks -->
+    </div><!-- /tab-panel drinks -->
+
+    <!-- ORDER FORM -->
+    <div class="order-form-wrap" data-aos="fade-up">
+      <h3>📋 Reserve a Table or Order Ahead</h3>
+      <p>Select menu items above, fill in the form, and we'll confirm your reservation via WhatsApp.</p>
+      <div class="selected-items-preview" id="resto-preview">No items selected. Tap a menu card above to select.</div>
+      <form onsubmit="sendToWhatsApp(event,'resto','Jatiluwih Resto','6281234567890')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resto-name">Full Name</label>
+            <input type="text" id="resto-name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="resto-phone">WhatsApp Number</label>
+            <input type="tel" id="resto-phone" placeholder="+62 812 xxxx xxxx" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resto-date">Visit Date</label>
+            <input type="date" id="resto-date" required />
+          </div>
+          <div class="form-group">
+            <label for="resto-time">Visit Time</label>
+            <select id="resto-time">
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00" selected>12:00 (Lunch)</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resto-pax">Number of Guests</label>
+            <select id="resto-pax">
+              <option value="1">1 Person</option>
+              <option value="2" selected>2 Persons</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons</option>
+              <option value="5-10">5–10 Persons</option>
+              <option value="10+">More Than 10 (Group)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resto-note">Special Request</label>
+            <input type="text" id="resto-note" placeholder="Vegetarian, allergy, table preference…" />
+          </div>
+        </div>
+        <button type="submit" class="btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Order via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — JATILUWIH ECO FARM
+════════════════════════════════════════ -->
+<section class="brand-section" id="eco-farm">
+  <div class="container">
+    <div class="brand-header" data-aos="fade-up">
+      <div class="section-label" style="background:#e8f5e9;color:#2e7d32;">🌿 Eco Farm &amp; Restaurant</div>
+      <h2>Jatiluwih Eco Farm</h2>
+      <div class="divider center"></div>
+      <p>Immerse yourself in Balinese farm life. Spanning 20 hectares within the UNESCO Jatiluwih rice terraces — dine, explore, and reconnect with nature.</p>
+    </div>
+
+    <div class="info-strip" data-aos="fade-up" data-aos-delay="100">
+      <div class="info-item"><span class="ii-icon">📍</span><div><strong>Location</strong><span>Jatiluwih, Tabanan, Bali</span></div></div>
+      <div class="info-item"><span class="ii-icon">🌾</span><div><strong>Area</strong><span>±20 Hectares</span></div></div>
+      <div class="info-item"><span class="ii-icon">👥</span><div><strong>Capacity</strong><span>Up to 400 Guests</span></div></div>
+      <div class="info-item"><span class="ii-icon">🏅</span><div><strong>Heritage</strong><span>UNESCO Rice Terraces</span></div></div>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="switchTab('eco','food',this)">🌾 Farm Food</button>
+      <button class="tab-btn" onclick="switchTab('eco','drinks',this)">🍃 Drinks</button>
+      <button class="tab-btn" onclick="switchTab('eco','activities',this)">🚴 Activities</button>
+    </div>
+
+    <!-- FARM FOOD TAB -->
+    <div class="tab-panel active" id="eco-food">
+      <div class="menu-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Farm-to-Table Buffet (Lunch)','IDR 175.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-eco">
+              <div class="ph-icon">🌾</div>
+              <div class="ph-title">Farm-to-Table Buffet</div>
+              <div class="ph-sub">Direct from the field to your plate</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Farm-to-Table Buffet <span class="badge-new">Popular</span></h4>
+            <p>All-you-can-eat spread featuring seasonal vegetables, organic rice, and Balinese dishes sourced directly from the farm.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 175.000/pax</span>
+              <span class="tag">Buffet</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Nasi Subak (Heritage Rice Set)','IDR 85.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-eco">
+              <div class="ph-icon">🍚</div>
+              <div class="ph-title">Nasi Subak</div>
+              <div class="ph-sub">Heritage rice set meal</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Nasi Subak</h4>
+            <p>Organic Jatiluwih red or white rice with seasonal vegetables, tempeh, tofu, and Balinese sambal. Pure and wholesome.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 85.000</span>
+              <span class="tag">Organic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Soto Ayam Kampung','IDR 55.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🍜</div>
+              <div class="ph-title">Soto Ayam Kampung</div>
+              <div class="ph-sub">Free-range chicken soup</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Soto Ayam Kampung</h4>
+            <p>Hearty free-range chicken soup with lemongrass, turmeric broth, glass noodles, and crispy shallots.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 55.000</span>
+              <span class="tag">Traditional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Cooking Class + Lunch Package','IDR 350.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-eco">
+              <div class="ph-icon">👨‍🍳</div>
+              <div class="ph-title">Cooking Class + Lunch</div>
+              <div class="ph-sub">Learn to cook Balinese food</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Cooking Class + Lunch <span class="badge-new">Experience</span></h4>
+            <p>Learn to cook authentic Balinese dishes using ingredients freshly harvested from the farm. Enjoy your creation for lunch.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 350.000/pax</span>
+              <span class="tag">Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Grilled Corn (Jagung Bakar)','IDR 20.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🌽</div>
+              <div class="ph-title">Jagung Bakar</div>
+              <div class="ph-sub">Grilled sweet corn</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Jagung Bakar</h4>
+            <p>Freshly picked sweet corn grilled over charcoal, brushed with butter and a sprinkle of Balinese sea salt.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 20.000</span>
+              <span class="tag">Snack</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Honey Harvest Pancake','IDR 45.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-food">
+              <div class="ph-icon">🥞</div>
+              <div class="ph-title">Honey Harvest Pancake</div>
+              <div class="ph-sub">Drizzled with farm honey</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Honey Harvest Pancake</h4>
+            <p>Fluffy pancakes drizzled with raw honey freshly harvested from the Eco Farm's bee colonies.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 45.000</span>
+              <span class="tag">Breakfast</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /eco food -->
+
+    <!-- DRINKS TAB ECO -->
+    <div class="tab-panel" id="eco-drinks">
+      <div class="menu-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Bamboo Coconut Water','IDR 30.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🥥</div>
+              <div class="ph-title">Bamboo Coconut Water</div>
+              <div class="ph-sub">Served in a bamboo cup</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Bamboo Coconut Water</h4>
+            <p>Fresh young coconut water served in an eco-friendly bamboo cup. Naturally sweet and hydrating.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 30.000</span>
+              <span class="tag">Eco</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Farm Honey Lemonade','IDR 35.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🍋</div>
+              <div class="ph-title">Farm Honey Lemonade</div>
+              <div class="ph-sub">Raw honey · fresh lime</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Farm Honey Lemonade</h4>
+            <p>Freshly squeezed lime juice sweetened with raw farm honey and topped with mint leaves.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 35.000</span>
+              <span class="tag">Refreshing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Traditional Loloh (Herbal)','IDR 28.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🌿</div>
+              <div class="ph-title">Loloh Cemcem</div>
+              <div class="ph-sub">Traditional Balinese herbal tonic</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Loloh Cemcem</h4>
+            <p>Traditional Balinese herbal drink made from cemcem leaves. Known for cooling the body and aiding digestion.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 28.000</span>
+              <span class="tag">Herbal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Bajigur (Warm Coconut Milk)','IDR 25.000')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-drink">
+              <div class="ph-icon">🫖</div>
+              <div class="ph-title">Bajigur</div>
+              <div class="ph-sub">Warm coconut milk drink</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Bajigur</h4>
+            <p>Warm, comforting drink made of coconut milk, palm sugar, pandan leaf, and ginger. A Balinese highland classic.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 25.000</span>
+              <span class="tag">Warm</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /eco drinks -->
+
+    <!-- ACTIVITIES TAB -->
+    <div class="tab-panel" id="eco-activities">
+      <div class="menu-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Rice Planting Experience','IDR 150.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">🌾</div>
+              <div class="ph-title">Rice Planting Experience</div>
+              <div class="ph-sub">UNESCO rice terrace · mud bath option</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Rice Planting Experience</h4>
+            <p>Step into the paddy field, learn the traditional Subak irrigation system, and plant your own rice. Optional mud bath included.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 150.000/pax</span>
+              <span class="tag">Adventure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','E-Bike Rice Terrace Tour','IDR 250.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">🚴</div>
+              <div class="ph-title">E-Bike Tour</div>
+              <div class="ph-sub">Electric bike · scenic terrace paths</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>E-Bike Rice Terrace Tour <span class="badge-new">Popular</span></h4>
+            <p>Explore the UNESCO Jatiluwih rice terraces on an electric bike. Enjoy panoramic views and cool highland breezes.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 250.000/pax</span>
+              <span class="tag">Eco Tour</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Fruit Picking Activity','IDR 100.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">🍒</div>
+              <div class="ph-title">Fruit Picking</div>
+              <div class="ph-sub">Pick tropical fruits directly from the trees</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Fruit Picking Activity</h4>
+            <p>Wander the orchards and pick seasonal tropical fruits — rambutan, snake fruit, papaya, and more. Fruits included.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 100.000/pax</span>
+              <span class="tag">Family</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Fishing at the Farm Pond','IDR 80.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">🎣</div>
+              <div class="ph-title">Farm Pond Fishing</div>
+              <div class="ph-sub">Catch your own fish · cook on-site</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Farm Pond Fishing</h4>
+            <p>Relax by the farm pond, catch your own fish, and have it cooked right there for you by our chefs.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 80.000/pax</span>
+              <span class="tag">Relaxing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Honey Harvesting Experience','IDR 120.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">🍯</div>
+              <div class="ph-title">Honey Harvesting</div>
+              <div class="ph-sub">Meet the bees · take home raw honey</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Honey Harvesting Experience</h4>
+            <p>Learn about traditional Balinese beekeeping, safely harvest raw honey, and take a small jar home as a souvenir.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 120.000/pax</span>
+              <span class="tag">Educational</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" onclick="toggleSelect(this,'eco','Traditional Coffee Making Class','IDR 130.000/pax')">
+          <div class="menu-card-img">
+            <div class="img-placeholder ph-nature">
+              <div class="ph-icon">☕</div>
+              <div class="ph-title">Traditional Coffee Making</div>
+              <div class="ph-sub">From bean to cup</div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <h4>Traditional Coffee Making Class</h4>
+            <p>Roast, grind, and brew traditional Balinese coffee from scratch. Learn centuries-old techniques passed down by farmers.</p>
+            <div class="menu-card-footer">
+              <span class="price">IDR 130.000/pax</span>
+              <span class="tag">Workshop</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /eco activities -->
+
+    <!-- ORDER FORM ECO -->
+    <div class="order-form-wrap" data-aos="fade-up">
+      <h3>📋 Book Your Eco Farm Experience</h3>
+      <p>Select items above, fill in your details, and we'll confirm via WhatsApp.</p>
+      <div class="selected-items-preview" id="eco-preview">No items selected. Tap a card above to select.</div>
+      <form onsubmit="sendToWhatsApp(event,'eco','Jatiluwih Eco Farm','6281234567891')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eco-name">Full Name</label>
+            <input type="text" id="eco-name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="eco-phone">WhatsApp Number</label>
+            <input type="tel" id="eco-phone" placeholder="+62 812 xxxx xxxx" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eco-date">Visit Date</label>
+            <input type="date" id="eco-date" required />
+          </div>
+          <div class="form-group">
+            <label for="eco-pax">Number of Guests</label>
+            <select id="eco-pax">
+              <option value="1">1 Person</option>
+              <option value="2" selected>2 Persons</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons</option>
+              <option value="5-10">5–10 Persons</option>
+              <option value="10+">More Than 10 (Group)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="eco-note">Special Request</label>
+            <input type="text" id="eco-note" placeholder="Dietary needs, accessibility, group details…" />
+          </div>
+        </div>
+        <button type="submit" class="btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — ROYAL ORCHID SPA
+════════════════════════════════════════ -->
+<section class="brand-section spa-form" id="royal-orchid-spa">
+  <div class="container">
+    <div class="brand-header" data-aos="fade-up">
+      <div class="section-label" style="background:#f3e5f5;color:#6a1b9a;">💜 Luxury Spa · Nusa Dua</div>
+      <h2>Royal Orchid Spa</h2>
+      <div class="divider center" style="background:#8b4f9e;"></div>
+      <p>The finest Balinese spa experience in Nusa Dua. Featuring world-class therapists, natural ingredients, and complimentary hotel pickup.</p>
+    </div>
+
+    <div class="info-strip" data-aos="fade-up" data-aos-delay="100">
+      <div class="info-item"><span class="ii-icon">📍</span><div><strong>Location</strong><span>Nusa Dua, Bali</span></div></div>
+      <div class="info-item"><span class="ii-icon">🚗</span><div><strong>Pickup</strong><span>Complimentary Hotel Pickup</span></div></div>
+      <div class="info-item"><span class="ii-icon">🌙</span><div><strong>Evening Promo</strong><span>10% Off — Sessions from 17:00</span></div></div>
+      <div class="info-item"><span class="ii-icon">⭐</span><div><strong>Specialty</strong><span>Traditional Balinese Massage</span></div></div>
+    </div>
+
+    <div class="treat-grid" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Royal Traditional Balinese Massage 60 Min','IDR 280.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-royal">
+            <div class="ph-icon">🙌</div>
+            <div class="ph-title">Royal Balinese Massage</div>
+            <div class="ph-sub">Gentle stretches · acupressure · aromatherapy</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Royal Traditional Balinese Massage</h4>
+          <p>The signature treatment — combines gentle stretches, acupressure, and aromatherapy oils for full body relaxation.</p>
+          <span class="treat-duration">⏱ 60 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 280.000</span>
+          <span class="tag">Signature</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Royal Traditional Balinese Massage 120 Min','IDR 480.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-royal">
+            <div class="ph-icon">🌺</div>
+            <div class="ph-title">Royal Balinese Massage</div>
+            <div class="ph-sub">Extended full-body therapy</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Royal Traditional Balinese Massage</h4>
+          <p>Extended session for complete muscle relief and deep stress release. Includes aromatherapy oil of your choice.</p>
+          <span class="treat-duration">⏱ 120 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 480.000</span>
+          <span class="tag">Signature</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','90 Min Relaxing Massage Package','IDR 380.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">🫧</div>
+            <div class="ph-title">Relaxing Package</div>
+            <div class="ph-sub">Welcome drink · foot · massage · shower</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Relaxing Massage Package <span class="badge-new">Best Value</span></h4>
+          <p>Welcome drink + Thalasso foot massage + Balinese full-body massage + refreshing shower.</p>
+          <span class="treat-duration">⏱ 90 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 380.000</span>
+          <span class="tag">Package</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Aromatherapy Massage','IDR 300.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-royal">
+            <div class="ph-icon">🌸</div>
+            <div class="ph-title">Aromatherapy Massage</div>
+            <div class="ph-sub">Essential oils · mind & body harmony</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Aromatherapy Massage</h4>
+          <p>Therapeutic massage using blended essential oils — lavender, ylang-ylang, or eucalyptus. Deeply calming.</p>
+          <span class="treat-duration">⏱ 60 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 300.000</span>
+          <span class="tag">Aromatherapy</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Balinese Body Scrub','IDR 220.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">✨</div>
+            <div class="ph-title">Balinese Body Scrub</div>
+            <div class="ph-sub">Natural exfoliation · glowing skin</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Balinese Body Scrub</h4>
+          <p>Full-body exfoliation using natural Balinese ingredients — rice powder, coconut, or volcanic ash — for glowing smooth skin.</p>
+          <span class="treat-duration">⏱ 45 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 220.000</span>
+          <span class="tag">Body Care</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Revitalizing Facial','IDR 260.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-royal">
+            <div class="ph-icon">💆</div>
+            <div class="ph-title">Revitalizing Facial</div>
+            <div class="ph-sub">Deep cleanse · hydrate · glow</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Revitalizing Facial</h4>
+          <p>Deep-cleansing facial using natural Bali ingredients. Includes steam, extraction, mask, and nourishing moisturizer.</p>
+          <span class="treat-duration">⏱ 60 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 260.000</span>
+          <span class="tag">Facial</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Manicure & Pedicure Combo','IDR 200.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">💅</div>
+            <div class="ph-title">Mani & Pedi Combo</div>
+            <div class="ph-sub">Nail care · foot soak · polish</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Manicure &amp; Pedicure Combo</h4>
+          <p>Complete hand and foot care — cuticle treatment, nail filing, polish, and a relaxing warm soak.</p>
+          <span class="treat-duration">⏱ 75 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 200.000</span>
+          <span class="tag">Nail Care</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'royal','Royal Couples Package','IDR 750.000/couple')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-royal">
+            <div class="ph-icon">💑</div>
+            <div class="ph-title">Royal Couples Package</div>
+            <div class="ph-sub">For two · flower bath · massage</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Royal Couples Package <span class="badge-new">Romantic</span></h4>
+          <p>Foot soak → aromatherapy massage → romantic flower bath → herbal tea. The ultimate couples escape in Nusa Dua.</p>
+          <span class="treat-duration">⏱ 120 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 750.000/couple</span>
+          <span class="tag">Couples</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ORDER FORM ROYAL SPA -->
+    <div class="order-form-wrap" data-aos="fade-up">
+      <h3>💜 Book Your Treatment at Royal Orchid Spa</h3>
+      <p>Select a treatment above, fill in your details, and we'll confirm your appointment via WhatsApp.</p>
+      <div class="selected-items-preview" id="royal-preview">No treatment selected. Tap a card above to select.</div>
+      <form onsubmit="sendToWhatsApp(event,'royal','Royal Orchid Spa Nusa Dua','6281234567892')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="royal-name">Full Name</label>
+            <input type="text" id="royal-name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="royal-phone">WhatsApp Number</label>
+            <input type="tel" id="royal-phone" placeholder="+62 812 xxxx xxxx" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="royal-date">Appointment Date</label>
+            <input type="date" id="royal-date" required />
+          </div>
+          <div class="form-group">
+            <label for="royal-time">Preferred Time</label>
+            <select id="royal-time">
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00" selected>15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00 (🌙 10% Off)</option>
+              <option value="18:00">18:00 (🌙 10% Off)</option>
+              <option value="19:00">19:00 (🌙 10% Off)</option>
+              <option value="20:00">20:00 (🌙 10% Off)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="royal-pickup">Hotel Name (for Pickup)</label>
+            <input type="text" id="royal-pickup" placeholder="Hotel name in Nusa Dua…" />
+          </div>
+          <div class="form-group">
+            <label for="royal-note">Special Request</label>
+            <input type="text" id="royal-note" placeholder="Pressure preference, allergies, therapist gender…" />
+          </div>
+        </div>
+        <button type="submit" class="btn-wa" style="background:#8b4f9e;box-shadow:0 4px 16px rgba(139,79,158,.35);">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Treatment via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 4 — BALI ORCHID SPA
+════════════════════════════════════════ -->
+<section class="brand-section spa-form" id="bali-orchid-spa">
+  <div class="container">
+    <div class="brand-header" data-aos="fade-up">
+      <div class="section-label" style="background:#fce4ec;color:#ad1457;">🌸 Traditional Spa · Kuta &amp; Nusa Dua</div>
+      <h2>Bali Orchid Spa</h2>
+      <div class="divider center" style="background:#c06ba0;"></div>
+      <p>Kuta and Nusa Dua's most-loved traditional spa. Authentic Balinese rituals, natural ingredients, and warmly welcoming therapists.</p>
+    </div>
+
+    <div class="info-strip" data-aos="fade-up" data-aos-delay="100">
+      <div class="info-item"><span class="ii-icon">📍</span><div><strong>Branches</strong><span>Kuta &amp; Nusa Dua, Bali</span></div></div>
+      <div class="info-item"><span class="ii-icon">🚗</span><div><strong>Pickup</strong><span>Complimentary Hotel Pickup</span></div></div>
+      <div class="info-item"><span class="ii-icon">👨‍👩‍👧</span><div><strong>Family</strong><span>Orchid Family Package Available</span></div></div>
+      <div class="info-item"><span class="ii-icon">🌿</span><div><strong>Ingredients</strong><span>100% Natural · Locally Sourced</span></div></div>
+    </div>
+
+    <div class="treat-grid" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Traditional Balinese Massage 60 Min','IDR 240.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-bali-spa">
+            <div class="ph-icon">🙌</div>
+            <div class="ph-title">Traditional Balinese Massage</div>
+            <div class="ph-sub">Stretches · palm pressure · full body</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Traditional Balinese Massage</h4>
+          <p>Full-body massage using traditional techniques combining deep tissue, palm pressure, and gentle stretches.</p>
+          <span class="treat-duration">⏱ 60 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 240.000</span>
+          <span class="tag">Signature</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Thalasso Foot Massage','IDR 150.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-bali-spa">
+            <div class="ph-icon">🦶</div>
+            <div class="ph-title">Thalasso Foot Massage</div>
+            <div class="ph-sub">Foot soak · pressure point release</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Thalasso Foot Massage</h4>
+          <p>Warm sea salt foot soak followed by a targeted pressure-point foot and lower leg massage. Pure relief.</p>
+          <span class="treat-duration">⏱ 45 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 150.000</span>
+          <span class="tag">Foot Care</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Body Scrub — Green Tea','IDR 190.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">🍵</div>
+            <div class="ph-title">Green Tea Body Scrub</div>
+            <div class="ph-sub">Antioxidant · detox · smooth skin</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Body Scrub — Green Tea</h4>
+          <p>Antioxidant-rich green tea scrub that exfoliates dead skin cells and detoxifies for a fresh, luminous glow.</p>
+          <span class="treat-duration">⏱ 45 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 190.000</span>
+          <span class="tag">Body Scrub</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Body Scrub — Strawberry','IDR 190.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">🍓</div>
+            <div class="ph-title">Strawberry Body Scrub</div>
+            <div class="ph-sub">Brightening · fruity · silky skin</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Body Scrub — Strawberry</h4>
+          <p>Brightening strawberry scrub rich in Vitamin C. Leaves skin silky smooth with a delightful fruity fragrance.</p>
+          <span class="treat-duration">⏱ 45 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 190.000</span>
+          <span class="tag">Body Scrub</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Body Scrub — Coffee','IDR 190.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-treat">
+            <div class="ph-icon">☕</div>
+            <div class="ph-title">Coffee Body Scrub</div>
+            <div class="ph-sub">Energizing · anti-cellulite · exfoliate</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Body Scrub — Coffee</h4>
+          <p>Energizing Balinese coffee scrub that reduces cellulite appearance, boosts circulation, and leaves skin soft.</p>
+          <span class="treat-duration">⏱ 45 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 190.000</span>
+          <span class="tag">Body Scrub</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Flower Bath Ritual','IDR 170.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-bali-spa">
+            <div class="ph-icon">🌺</div>
+            <div class="ph-title">Flower Bath Ritual</div>
+            <div class="ph-sub">Balinese floral bath · essential oils</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Flower Bath Ritual</h4>
+          <p>Soak in a warm bath filled with frangipani, rose petals, and essential oils. A deeply ceremonial Balinese experience.</p>
+          <span class="treat-duration">⏱ 30 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 170.000</span>
+          <span class="tag">Ritual</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Orchid Family Package (3 Persons)','IDR 650.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-bali-spa">
+            <div class="ph-icon">👨‍👩‍👧</div>
+            <div class="ph-title">Orchid Family Package</div>
+            <div class="ph-sub">For 3 persons · full experience</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Orchid Family Package <span class="badge-new">3 Pax</span></h4>
+          <p>Thalasso foot wash + body massage + body scrub (choice of flavor) + refreshing shower + herbal tea. Optional flower bath add-on.</p>
+          <span class="treat-duration">⏱ 90 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 650.000</span>
+          <span class="tag">Family</span>
+        </div>
+      </div>
+
+      <div class="treat-card" onclick="toggleSelectSpa(this,'bali','Bali Bliss Full-Day Package','IDR 550.000')">
+        <div class="treat-card-img">
+          <div class="img-placeholder ph-bali-spa">
+            <div class="ph-icon">🌟</div>
+            <div class="ph-title">Bali Bliss Package</div>
+            <div class="ph-sub">Full pampering · half-day experience</div>
+          </div>
+        </div>
+        <div class="treat-card-body">
+          <h4>Bali Bliss Full Package <span class="badge-new">Best Value</span></h4>
+          <p>Foot soak → full-body massage → body scrub → flower bath → facial → herbal tea. The complete Bali spa journey.</p>
+          <span class="treat-duration">⏱ 180 min</span>
+        </div>
+        <div class="treat-card-footer">
+          <span class="price">IDR 550.000</span>
+          <span class="tag">Full Package</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ORDER FORM BALI SPA -->
+    <div class="order-form-wrap" data-aos="fade-up">
+      <h3>🌸 Book Your Treatment at Bali Orchid Spa</h3>
+      <p>Select a treatment above, fill in your details, and we'll confirm your booking via WhatsApp.</p>
+      <div class="selected-items-preview" id="bali-preview">No treatment selected. Tap a card above to select.</div>
+      <form onsubmit="sendToWhatsApp(event,'bali','Bali Orchid Spa','6281234567893')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bali-name">Full Name</label>
+            <input type="text" id="bali-name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="bali-phone">WhatsApp Number</label>
+            <input type="tel" id="bali-phone" placeholder="+62 812 xxxx xxxx" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bali-branch">Preferred Branch</label>
+            <select id="bali-branch">
+              <option value="Kuta">Kuta Branch</option>
+              <option value="Nusa Dua">Nusa Dua Branch</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bali-date">Appointment Date</label>
+            <input type="date" id="bali-date" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bali-time">Preferred Time</label>
+            <select id="bali-time">
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00" selected>14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bali-note">Special Request</label>
+            <input type="text" id="bali-note" placeholder="Pressure level, therapist gender, allergies…" />
+          </div>
+        </div>
+        <button type="submit" class="btn-wa" style="background:#c06ba0;box-shadow:0 4px 16px rgba(192,107,160,.35);">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>BaliDeals</h3>
+      <p>Your gateway to authentic Bali dining and spa experiences. From the UNESCO rice terraces of Jatiluwih to the luxury spas of Nusa Dua and Kuta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Dining</h4>
+      <ul>
+        <li><a href="#jatiluwih-resto">Jatiluwih Resto</a></li>
+        <li><a href="#eco-farm">Jatiluwih Eco Farm</a></li>
+        <li><a href="#eco-farm">Farm Activities</a></li>
+        <li><a href="#eco-farm">Group Buffet</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Spa</h4>
+      <ul>
+        <li><a href="#royal-orchid-spa">Royal Orchid Spa</a></li>
+        <li><a href="#bali-orchid-spa">Bali Orchid Spa</a></li>
+        <li><a href="#royal-orchid-spa">Nusa Dua Branch</a></li>
+        <li><a href="#bali-orchid-spa">Kuta Branch</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#jatiluwih-resto">📞 Jatiluwih Resto</a></li>
+        <li><a href="#eco-farm">📞 Eco Farm</a></li>
+        <li><a href="#royal-orchid-spa">📞 Royal Orchid Spa</a></li>
+        <li><a href="#bali-orchid-spa">📞 Bali Orchid Spa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 BaliDeals · All prices are indicative and subject to change · Powered by WhatsApp
+  </div>
+</footer>
+
+<!-- ══ FLOATING WA BUTTON ══ -->
+<a id="float-wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 600, easing: 'ease-out-quad', once: true, offset: 60 });
+
+  // ── hamburger ──
+  document.getElementById('hamburger').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+
+  // ── tab switcher ──
+  function switchTab(section, tab, btn) {
+    document.querySelectorAll('#' + section + '-food, #' + section + '-drinks, #' + section + '-activities').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    var target = document.getElementById(section + '-' + tab);
+    if (target) target.classList.add('active');
+    btn.closest('.menu-tabs').querySelectorAll('.tab-btn').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  // ── selected items state ──
+  var selections = { resto: [], eco: [], royal: [], bali: [] };
+
+  function toggleSelect(card, section, name, price) {
+    card.classList.toggle('selected');
+    var idx = selections[section].findIndex(function (i) { return i.name === name; });
+    if (idx > -1) {
+      selections[section].splice(idx, 1);
+    } else {
+      selections[section].push({ name: name, price: price });
+    }
+    updatePreview(section);
+  }
+
+  function toggleSelectSpa(card, section, name, price) {
+    card.classList.toggle('selected');
+    var idx = selections[section].findIndex(function (i) { return i.name === name; });
+    if (idx > -1) {
+      selections[section].splice(idx, 1);
+    } else {
+      selections[section].push({ name: name, price: price });
+    }
+    updatePreview(section);
+  }
+
+  function updatePreview(section) {
+    var el = document.getElementById(section + '-preview');
+    if (!el) return;
+    if (selections[section].length === 0) {
+      el.innerHTML = 'No items selected. Tap a card above to select.';
+      return;
+    }
+    var html = '<strong>Selected:</strong> ';
+    html += selections[section].map(function (i) {
+      return '<span>' + i.name + ' (' + i.price + ')</span>';
+    }).join(', ');
+    el.innerHTML = html;
+  }
+
+  // ── WhatsApp submit ──
+  function sendToWhatsApp(e, section, brandName, waNumber) {
+    e.preventDefault();
+    var items = selections[section];
+    var name  = document.getElementById(section + '-name').value;
+    var phone = document.getElementById(section + '-phone').value;
+    var date  = document.getElementById(section + '-date').value;
+    var note  = (document.getElementById(section + '-note') || {}).value || '';
+    var time  = (document.getElementById(section + '-time') || {}).value || '';
+    var pax   = (document.getElementById(section + '-pax') || {}).value || '';
+    var branch = (document.getElementById(section + '-branch') || {}).value || '';
+    var pickup = (document.getElementById(section + '-pickup') || {}).value || '';
+
+    var itemList = items.length > 0
+      ? items.map(function (i) { return '  • ' + i.name + ' — ' + i.price; }).join('\n')
+      : '  (No specific item selected)';
+
+    var msg = '🌴 *' + brandName + ' — Booking / Order*\n\n';
+    msg += '👤 Name: ' + name + '\n';
+    msg += '📱 WhatsApp: ' + phone + '\n';
+    msg += '📅 Date: ' + date + (time ? ' at ' + time : '') + '\n';
+    if (pax)    msg += '👥 Guests: ' + pax + '\n';
+    if (branch) msg += '📍 Branch: ' + branch + '\n';
+    if (pickup) msg += '🏨 Hotel (Pickup): ' + pickup + '\n';
+    if (note)   msg += '💬 Request: ' + note + '\n';
+    msg += '\n*Order / Treatment:*\n' + itemList;
+    msg += '\n\n_Sent via balideals.online_';
+
+    var url = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  }
+
+  // ── active nav highlight on scroll ──
+  var sections = ['jatiluwih-resto', 'eco-farm', 'royal-orchid-spa', 'bali-orchid-spa'];
+  var navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', function () {
+    var scrollY = window.scrollY + 80;
+    sections.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && scrollY >= el.offsetTop && scrollY < el.offsetTop + el.offsetHeight) {
+        navLinks.forEach(function (a) { a.classList.remove('active'); });
+        var active = document.querySelector('.nav-links a[href="#' + id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
